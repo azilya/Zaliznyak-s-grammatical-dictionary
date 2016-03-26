@@ -6,6 +6,7 @@ It takes a text string as an input, and returns a list of unknown words with mar
 Try it here: <http://web-corpora.net/wsgi3/GDictionary/>
 (Web-source for the page is included in the code in the web-page_source folder)
 
+**Important points**
 * What we can do: analyze unknown verbs and nouns. </br>What we can't do: analyze other word classes.
 * Noun tags denote the stem type and declination class. Verb tags denote only the stem type. You can find more info in the web version of "Grammatical Dictionary of Russian Language" by A.A. Zaliznyak at <a href="http://udarenieru.ru/index.php">this link</a>.
 * Project description in Russian: <https://www.hse.ru/ma/ling/st-projects>
