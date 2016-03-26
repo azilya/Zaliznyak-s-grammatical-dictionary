@@ -3,7 +3,8 @@
 This is a module for predicting grammatical markers for unknown Russian words, according to notation from A.A. Zaliznyak's "Grammar Dictionary of the Russian Language". 
 It takes a text string as an input, and returns a list of unknown words with markers predicted for them.
 
-Try it here: http://web-corpora.net/wsgi3/GDictionary/
+Try it here: <http://web-corpora.net/wsgi3/GDictionary/>
+(Web-source for the page is included in the code in the web-page_source folder)
 
 **Installation**
 Way 1. If you do not want to change the code in any way, you can download the .whl file and then run ``pip install gdictionary-0.756a0-py3-none-any.whl`` from your command line.
@@ -28,6 +29,9 @@ Way 2. If you want to see the code and maybe even change it, you can clone this 
 ----------------
 
 Это модуль для предсказания грамматических характеристик незнакомых слов, в соответствии с "Грамматическим словарем русского языка" А.А. Зализняка. Он принимает на вход текстовую строку, находит в ней слова, отсутствующие в словаре Зализняка и пытается предсказать для них лемму и ее тип склонения или спряжения в соответствии с нотацией Грамматичекого словаря.
+
+Пример работы можно посмотреть на сайте <http://web-corpora.net/wsgi3/GDictionary/>
+(Код сайта также выложен в репозитории в папке web-page_source)
 
 **Установка**
 Способ 1. Если вы не заинтересованы в просмотре и изменении кода, можно просто скачать .whl файл и установить его с помощью команды ``pip install gdictionary-0.756a0-py3-none-any.whl`` в консоли.

@@ -1,0 +1,23 @@
+﻿{% extends "base.html" %}
+{% set title = 'Kira' %}
+{% block main %}
+		<header>
+			<h1><img class="pers" src='{{url_for("static", filename="Kira.jpg")}}' alt="Kira"></h1>
+		</header>			
+		<section class="persinfo">
+			<h2 class="index">Kira Droganova</h2>
+			<br>
+			<p class="one">e-mail: kira.droganova@gmail.com
+			<br>
+			Faculty of Humanities
+			<br>
+			Higher School of Economics, Moscow
+			</p>
+		</section>
+
+		<section class="index">
+			<h2 class="index">Project role</h2>
+			<p> <i>All in one</i></p>
+			<p class="back"><i><a href='{{url_for("index")}}'>Back</a></i></p>
+		</section>
+{% endblock %}

@@ -1,0 +1,14 @@
+﻿{% extends "base.html" %}
+{% set title = 'Feedback' %}
+{% block main %}
+		<section>
+            <form method='post' id="fb_form" action="{{url_for('send', result=result)}}">
+            {% for line in result %}
+                {% set i = result.index(line) %}                
+                <p>{{ "\t".join(line) }}<br>
+                Верно&nbsp;<input type="radio" name="{{i|string}}" value=1>&nbsp;<input type="radio" name="{{i|string}}" value=0>&nbsp;Неверно</p>
+            {% endfor %}
+            <input class="col" type="submit" value="Send">
+            </form>
+		</section>
+{% endblock %}

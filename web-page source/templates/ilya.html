@@ -1,0 +1,23 @@
+﻿{% extends "base.html" %}
+{% set title = 'Ilya' %}
+{% block main %}
+		<header>
+			<h1><img class="pers" src='{{url_for("static", filename="Ilya.jpg")}}' alt="Ilya"></h1>
+		</header>			
+		<section class="persinfo">
+			<h2 class="index">Ilya Azerkovich</h2>
+			<br>
+			<p class="one">e-mail: iazerkovich@gmail.com
+			<br>
+			Faculty of Humanities
+			<br>
+			Higher School of Economics, Moscow
+			</p>
+		</section>
+
+		<section class="index">
+			<h2 class="index">Project role</h2>
+			<p> <i>The man who makes sure stuff works</i></p>
+			<p class="back"><i><a href='{{url_for("index")}}'>Back</a></i></p>
+		</section>
+{% endblock %}

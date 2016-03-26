@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% set title = 'Prediction' %}
+
+
+{% block main %}
+<section>
+	<h2 class="index">Please, follow instructions below</h2>
+	<p>or return to <b><a href='{{url_for("index")}}'>main page :)</a></b></p>
+</section>
+<div class="elem">
+	<section class='tabeled'>
+	<form method="post" action="{{url_for('form_analyze')}}">
+		<h3 class="one">Add your text</h3>
+		<p class="oneandahalf">Russian, no more than 50 words</p>
+		<textarea placeholder="Звендевели бряцколки, танценоги засверкались на ракудрявый кефирник" name="message" rows="14" cols="31" style='height:40vh; width: 120%;'>{{query}}</textarea>
+		<p><input class="col" value="Predict" type="submit"></p>
+	</form>
+	</section>
+	<section class='tabeled'>
+	<form method="post">
+		<h3 class="one">and here is the prediction</h3>
+		<p class="oneandahalf">Lemma, gender, type of declension</p>
+		<div id="pred" class="hide-scroll" style='background: white; height:40vh; width: 120%; overflow-y:auto'>
+			<div style='overflow: auto'>
+				{% for item in result %}
+				
+					<div class='p'>{{item[0]}}</div>
+					<div class='tooltip' style="font-size: 12px; font-family:monospace; text-decoration:underline; display: inline-block;" title='{{"".join(popup[result.index(item)])}}'>{{item[1]}}</div>
+					<br>
+				{% endfor %}
+			</div>
+        </div>
+	</form>
+    {% if result != '' %}
+    {% if '' not in result[0] %}
+    <p><a href="{{url_for('feedback', result=result)}}" target="_blank">Send feedback</a></p>
+    {% endif %}
+    {% endif %}
+	</section>				
+</div>
+<section class="elem">
+	<h3 class="one">Or upload your file and download the predictions</h3>
+	<p class="oneandahalf">Russian, .txt, utf-8, max 20Mb</p>
+	<form method="post" action="{{url_for('file_analyze')}}" enctype="multipart/form-data">
+		<p>
+			<label for="new_text_file">Choose a file:</label>
+			<input type="file" id="new_text_file" name="file" value="Upload">
+			<p><input class="col" value="Upload" type="submit"></p>
+		</p>
+		{% with messages = get_flashed_messages() %}
+			{% if messages %}
+				<ul class='errors'>
+					{% for message in messages %}
+						<li>{{ message }}</li>
+					{% endfor %}
+				</ul>
+			{% endif %}
+		{% endwith %}
+	</form>
+    {% if filename %}
+    <a href="{{url_for('static', filename=filename)}}">Download results</a>
+    {% endif %}
+	<br>
+	<!-- <form method="post" action="action_page.php">E-mail:<br>
+	<input name="mail" type="text">
+	<p><input class="col" onclick="alert('Hohoho!')" value="Send" type="submit"></p>
+	</form> -->
+</section>
+{% endblock %}
