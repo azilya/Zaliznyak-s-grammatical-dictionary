@@ -6,7 +6,6 @@ It takes a text string as an input, and returns a list of unknown words with mar
 Try it here: <http://web-corpora.net/wsgi3/GDictionary/>
 (Web-source for the page is included in the code in the web-page_source folder)
 
-**Important points**
 * What we can do: analyze unknown verbs and nouns. </br>What we can't do: analyze other word classes.
 * Noun tags denote the stem type and declination class. Verb tags denote only the stem type. You can find more info in the web version of "Grammatical Dictionary of Russian Language" by A.A. Zaliznyak at <a href="http://udarenieru.ru/index.php">this link</a>.
 * Project description in Russian: <https://www.hse.ru/ma/ling/st-projects>
@@ -42,6 +41,7 @@ Way 2. If you want to see the code and maybe even change it, you can clone this 
 * Что может делать скрипт: делать предсказания для неизвестных существительных и глаголов. Чего не может делать скрипт: делать предсказания для других частей речи.
 * Теги существительных обозначают тип основы и класс склонения. Типы глаголов обозначают тип основы.
 * Описание проекта на сайте Высшей школы экономики: <https://www.hse.ru/ma/ling/st-projects>
+
 **Установка**
 Способ 1. Если вы не заинтересованы в просмотре и изменении кода, можно просто скачать .whl файл и установить его с помощью команды ``pip install gdictionary-0.756a0-py3-none-any.whl`` в консоли.
 Способ 2. Если вас интересует код проекта, можно клонировать репозиторий себе на компьютер и либо пользоваться им из его папки, либо установить с помощью команды ``python setup.py install``. 
